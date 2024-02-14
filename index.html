@@ -1,28 +1,86 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IT VR EXPO</title>
-  <style>
-    body {
-      margin: 0;
-      overflow-y: scroll;
-    }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>IT VR EXPO</title>
+ <style>
+   body {
+     margin: 0;
+     overflow-y: scroll;
+   }
 
-    img {
-      /* Ensure image actually displays */
-      display: block;
-      /* Ensure content doesn't flow under the image */
-      position: relative;
-      /* Make image fit width while maintaining aspect ratio */
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
+   img {
+     /* Ensure image actually displays */
+     display: block;
+     /* Ensure content doesn't flow under the image */
+     position: relative;
+     /* Make image fit width while maintaining aspect ratio */
+     max-width: 100%;
+     height: auto;
+   }
+
+  .poll-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    color: #fff;
+  }
+
+  .poll-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .poll-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .poll-option {
+    cursor: pointer;
+  }
+
+  .poll-option input[type="radio"] {
+    display: none;
+  }
+
+  .poll-option label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .poll-option input[type="radio"]:checked + label {
+    color: #00f;
+  }
+</style>
 </head>
 <body>
-  <img src="full-image.png" alt="Long vertical image">
+ <img src="full-image.png" alt="Long vertical image">
+
+  <div class="poll-container">
+    <h2 class="poll-title">What do you think of VR technology?</h2>
+    <div class="poll-options">
+      <div class="poll-option">
+        <input type="radio" id="option-1" name="poll" value="1">
+        <label for="option-1">It's the future!</label>
+      </div>
+      <div class="poll-option">
+        <input type="radio" id="option-2" name="poll" value="2">
+        <label for="option-2">It's a gimmick.</label>
+      </div>
+      <div class="poll-option">
+        <input type="radio" id="option-3" name="poll" value="3">
+        <label for="option-3">I'm not sure yet.</label>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
